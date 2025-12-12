@@ -11,7 +11,7 @@ const Hero = () => {
 
   useGSAP(() => {
     const heroSplit = new SplitText(".title", {
-      type: "chars, words",
+      type: "lines",
     });
 
     const paragraphSplit = new SplitText(".subtitle", {
@@ -19,9 +19,9 @@ const Hero = () => {
     });
 
     // Apply text-gradient class once before animating
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    heroSplit.lines.forEach((char) => char.classList.add("text-gradient"));
 
-    gsap.from(heroSplit.chars, {
+    gsap.from(heroSplit.lines, {
       yPercent: 100,
       duration: 1.8,
       ease: "expo.out",
